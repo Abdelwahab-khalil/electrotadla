@@ -1,0 +1,97 @@
+{% extends 'store/base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <main id="main" class="main-site left-sidebar">
+
+		<div class="container">
+
+			<div class="wrap-breadcrumb">
+				<ul>
+					<li class="item-link"><a href="/" class="link">Accueil</a></li>
+					<li class="item-link"><span>Contact</span></li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class=" main-content-area">
+					<div class="wrap-contacts ">
+						<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+							<div class="contact-box contact-form">
+<br>
+                                <img src="{% static 'images/electro.jpg' %}" alt="product thumbnail" />
+                                
+							</div>
+						</div>
+						<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+							<div class="contact-box contact-info">
+
+                                <br>     
+                                <h2 class="box-title">Pour la reparation de votre machine veuillez nous visiter ou bien nous appler </h2>
+
+								
+								<h2 class="box-title">Contact Detail</h2>
+								<div class="wrap-icon-box">
+
+									<div class="icon-box-item">
+										<i class="fa fa-envelope" aria-hidden="true"></i>
+										<div class="right-info">
+											<b>Email</b>
+											<p>electrotadla.@hotmail.fr</p>
+										</div>
+									</div>
+
+									<div class="icon-box-item">
+										<i class="fa fa-phone" aria-hidden="true"></i>
+										<div class="right-info">
+											<b>Telephone</b>
+											<p>(+212) 06 33 07 67 07</p>
+										</div>
+									</div>
+
+									<div class="icon-box-item">
+										<i class="fa fa-map-marker" aria-hidden="true"></i>
+										<div class="right-info">
+											<b>Address</b>
+											<p>Hay Smara N 152 Kasba Tadla<br />Beni Mellal, Maroc</p>
+										</div>
+                                    </div>
+                                    <h4>Vous pouvez aussi nous envoyer le probleme de votre machine </h4>
+									<br>
+									
+									<form action="/reparation/" method="post" name="frm-contact">
+										
+										{% csrf_token %}
+
+                                        <label for="nom">Nom<span>*</span></label>
+                                        <input type="text" value="" id="nom" name="nom" >
+
+                                        <label for="email">Email</label>
+                                        <input type="text" value="" id="email" name="email" >
+
+                                        <label for="tele">Telephone<span>*</span></label>
+                                        <input type="text" value="" id="tele" name="tele" >
+                                        
+                                        <label for="module">Nom et module de votre machine</label>
+                                        <input type="text" value="" id="module" name="module" >
+
+                                        <label for="probleme">Probleme de votre machine</label>
+                                        <textarea name="probleme" id="probleme"></textarea>
+
+                                        <input type="submit" name="ok" value="Envoyer" >
+                                        
+                                    </form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--end main products area-->
+
+			</div><!--end row-->
+
+		</div><!--end container-->
+
+	</main>
+
+
+    {% endblock content %}

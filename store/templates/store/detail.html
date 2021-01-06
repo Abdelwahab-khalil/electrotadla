@@ -1,0 +1,132 @@
+{% extends 'store/base.html' %}
+    {% load static %}
+    {% block content %}
+
+	<!--main area-->
+	<main id="main" class="main-site">
+
+		<div class="container">
+
+			<div class="wrap-breadcrumb">
+				<ul>
+					<li class="item-link"><a href="/" class="link">Accueil</a></li>
+					<li class="item-link"><span>detail</span></li>
+				</ul>
+			</div>
+			<div class="row">
+
+				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
+					<div class="wrap-product-detail">
+						<div class="detail-media">
+							<div class="product-gallery">
+							  <ul class="slides">
+
+							    <li data-thumb="{{produit.picture_1}}">
+							    	<img src="{{produit.picture_1}}" alt="{{produit.picture_1}}" />
+							    </li>
+
+							    <li data-thumb="{{produit.picture_2}}">
+							    	<img src="{{produit.picture_2}}" alt="{{produit.picture_2}}" />
+							    </li>
+
+							    <li data-thumb="{{produit.picture_3}}">
+							    	<img src="{{produit.picture_3}}" alt="{{produit.picture_3}}" />
+							    </li>
+
+							    <li data-thumb="{{produit.picture_4}}">
+							    	<img src="{{produit.picture_4}}" alt="{{produit.picture_4}}" />
+							    </li>
+
+							    <li data-thumb="{{produit.picture_5}}">
+							    	<img src="{{produit.picture_5}}" alt="{{produit.picture_5}}" />
+							    </li>
+
+							    <li data-thumb="{{produit.picture_6}}">
+							    	<img src="{{produit.picture_6}}" alt="{{produit.picture_6}}" />
+							    </li>
+
+							  </ul>
+							</div>
+						</div>
+						<div class="detail-info">
+							
+                            <h2 class="product-name">{{produit.nom}}</h2>
+                            <div class="short-desc">
+                                <ul>
+                                    <li>{{produit.petite_description}}</li>
+                                    
+                                </ul>
+                            </div>
+                           
+                            <div class="wrap-price"><span class="product-price">{{produit.prix}} Dh</span></div>
+                            <div class="stock-info in-stock">
+                                <p class="availability">Disponible: <b>{{produit.stock}}</b></p>
+                            </div>
+                           
+							
+						</div>
+						<div class="advance-info">
+							<div class="tab-control normal">
+								<a href="#description" class="tab-control-item active">Description</a>
+								<a href="#add_infomation" class="tab-control-item">Plus Infomation</a>
+								<a href="#review" class="tab-control-item">Demander</a>
+							</div>
+							<div class="tab-contents">
+								<div class="tab-content-item active" id="description">
+									<p>{{produit.plus_information}}</p>
+								</div>
+
+								<div class="tab-content-item" id="add_information">
+									<p>{{produit.plus_information}}</p>
+								</div>
+								
+								<div class="tab-content-item " id="review">
+									
+		
+										<div id="review_form_wrapper">
+											<div id="review_form">
+												<div id="respond" class="comment-respond"> 
+
+													<p>Demander le produit</p>
+													<p>Pour confirmer votre demande veuillez nous contacter par telephone </p>
+
+													<form action="/detail/{{produit.id}}/" method="post" id="commentform" class="comment-form" novalidate="">
+
+														{% csrf_token %}
+														
+														<p class="comment-form-author">
+															<label for="nom">Nom<span>*</span></label>
+                                  						    <input type="text" value="" id="nom" name="nom" >
+														</p>
+														<p class="comment-form-email">
+															<label for="tele">Telephone<span>*</span></label>
+                                      						<input type="text" value="" id="tele" name="tele" >
+														</p>
+														<p class="comment-form-address">
+															<label for="address">Address<span>*</span></label>
+                                      						<input type="text" value="" id="address" name="address" >
+														</p> <br> <br>
+														<p class="comment-form-message">
+															<label for="message">Message<span>*</span></label>
+                                      						<input type="text" value="" id="message" name="message" >
+														</p>
+														<p class="form-submit">
+															<input name="submit" type="submit" id="submit" class="submit" value="Demander">
+														</p>
+													</form>
+
+												</div><!-- .comment-respond-->
+											</div><!-- #review_form -->
+										</div><!-- #review_form_wrapper -->
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!--end main products area-->
+
+				
+	</main>
+	<!--main area-->
+{% endblock content %}

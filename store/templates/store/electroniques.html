@@ -1,0 +1,49 @@
+{% extends 'store/base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <div class="container">
+        <div class="row">
+            <ul class="nav navbar-nav">
+                
+            </ul>
+            <div class="box">
+                <div class="row"></div>
+
+                <ul class="product-list grid-products equal-container">
+        
+                    {% for produit in produits %}
+        
+                    <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+                        <div class="product product-style-3 equal-elem ">
+                            <div class="product-thumnail">
+                                <a href="/detail/{{produit.id}}" title="{{produit.nom}}">
+                                    <figure><img src="{{produit.picture_1}}" alt="{{produit.nom}}"></figure>
+                                </a>
+                            </div>
+                            <div class="product-info">
+                                <a href="#" class="product-name"><span>{{produit.nom}}</span></a>
+                                <div class="wrap-price"><span class="product-price">{{produit.prix}} Dh</span></div>
+                                <a href="#" class="btn add-to-cart">Detail</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    {% endfor %}
+
+                    
+                    
+                </ul>   
+            </div>   
+           
+        </div>
+
+        
+
+    </div>
+  
+   
+    
+   
+
+    {% endblock content %}
