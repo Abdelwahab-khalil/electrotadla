@@ -1,0 +1,1 @@
+web: gunicorn electrotadla.wsgi --log-file -

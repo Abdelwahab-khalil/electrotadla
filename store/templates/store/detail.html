@@ -67,17 +67,23 @@
 						</div>
 						<div class="advance-info">
 							<div class="tab-control normal">
-								<a href="#description" class="tab-control-item active">Description</a>
-								<a href="#add_infomation" class="tab-control-item">Plus Infomation</a>
+								<a href="#description" class="tab-control-item active">description</a>
+								<a href="#add_infomation" class="tab-control-item">Plus d'information</a>
 								<a href="#review" class="tab-control-item">Demander</a>
 							</div>
 							<div class="tab-contents">
 								<div class="tab-content-item active" id="description">
-									<p>{{produit.plus_information}}</p>
+									<p>{{produit.description}}</p>	
 								</div>
-
-								<div class="tab-content-item" id="add_information">
-									<p>{{produit.plus_information}}</p>
+								<div class="tab-content-item " id="add_infomation">
+									<table class="shop_attributes">
+										<tbody>
+											<tr>
+												<th>{{produit.plus_information}}</th>
+											</tr>
+										
+										</tbody>
+									</table>
 								</div>
 								
 								<div class="tab-content-item " id="review">
