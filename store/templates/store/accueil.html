@@ -10,7 +10,7 @@
 			
 
 		     
-			<div class="wrap-main-slide">
+			<div class="wrap-main-slide" id="top" >
 				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
 					{% for produit in produits %}
 					{% if produit.type == "1" %}
@@ -36,7 +36,7 @@
 				{% for produit in produits %}
 					{% if produit.type == "2" %}
 
-						<div class="banner-item">
+						<div class="banner-item"  >
 							<a href="/detail/{{produit.id}}" class="link-banner banner-effect-1">
 								<figure><img src="{{produit.picture_1}}" alt="" width="580" height="190"></figure>
 							</a>
@@ -46,7 +46,7 @@
 			</div>
 
 			<!--On Sale-->
-			<div class="wrap-show-advance-info-box style-1 has-countdown">
+			<div class="wrap-show-advance-info-box style-1 has-countdown" id="solde" >
 				<h3 class="title-box">Solde</h3>
 				<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
