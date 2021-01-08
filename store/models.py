@@ -10,6 +10,7 @@ class Produit(models.Model):
     prix  = models.IntegerField()
     stock = models.CharField(max_length=50)
     type = models.CharField(max_length=50)
+    etat = models.CharField(max_length=50, default="neuf")
     picture_1 = models.URLField()
     picture_2 = models.URLField()
     picture_3 = models.URLField()
